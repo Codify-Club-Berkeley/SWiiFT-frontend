@@ -1,21 +1,28 @@
 import React from "react";
-import { LinkingOptions, NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Profile from "../pages/profiles/Profile";
-import Messages from "../pages/messages/Messages";
-import Locals from "../pages/explore/Locals";
+import ProfileNavigator from "./TabNavigationNavigators/ProfileNavigation";
+import LocalsNavigator from "./TabNavigationNavigators/LocalsNavigation";
+import MessagesNavigator from "./TabNavigationNavigators/MessagesNavigation";
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Profile" component={Profile}></Tab.Screen>
-        <Tab.Screen name="Messages" component={Messages}></Tab.Screen>
-        <Tab.Screen name="Locals" component={Locals}></Tab.Screen>
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator>
+      <Tab.Screen
+        name="ProfileNavigator"
+        component={ProfileNavigator}
+      ></Tab.Screen>
+      <Tab.Screen
+        name="MessagesNavigator"
+        component={MessagesNavigator}
+      ></Tab.Screen>
+      <Tab.Screen
+        name="LocalsNavigator"
+        component={LocalsNavigator}
+      ></Tab.Screen>
+    </Tab.Navigator>
   );
 }

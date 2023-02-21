@@ -3,10 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { registerRootComponent } from "expo";
 
-import TabNavigation from "./navigation/TabNavigation";
+import RootNavigation from "./navigation/RootNavigation";
 
 export default function App() {
-  return <TabNavigation></TabNavigation>;
+  return <RootNavigation></RootNavigation>;
 }
 registerRootComponent(App);
 
