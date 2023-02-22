@@ -11,7 +11,7 @@ export default function RootNavigation() {
   return (
     <NavigationContainer>
       <Root.Navigator>
-        <Root.Screen name="Login" component={AppEntryNavigator}></Root.Screen>
+        <Root.Screen name="AppEntry" component={AppEntryNavigator}></Root.Screen>
         <Root.Screen name="Tab" component={TabNavigation}></Root.Screen>
       </Root.Navigator>
     </NavigationContainer>
