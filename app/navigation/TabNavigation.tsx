@@ -14,6 +14,7 @@ export default function TabNavigation() {
       <Tab.Screen
         name="ProfileNavigator"
         component={ProfileNavigator}
+        options={{headerShown: false}}
       ></Tab.Screen>
       <Tab.Screen
         name="MessagesNavigator"

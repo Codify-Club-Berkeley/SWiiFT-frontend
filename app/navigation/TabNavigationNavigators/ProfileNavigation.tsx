@@ -12,6 +12,7 @@ export default function ProfileNavigator() {
       <ProfileNav.Screen
         name="Profiles"
         component={Profile}
+        options={{headerShown: false}}
       ></ProfileNav.Screen>
     </ProfileNav.Navigator>
   );
