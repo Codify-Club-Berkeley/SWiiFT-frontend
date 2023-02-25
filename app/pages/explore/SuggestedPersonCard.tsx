@@ -5,7 +5,7 @@ export default function SuggestedPersonCard() {
   return (
      <View style={styles.Container}>
      <ImageBackground source={{uri: 'https://i0.wp.com/newspack-berkeleyside-cityside.s3.amazonaws.com/wp-content/uploads/2016/09/OskiRappels500.jpg'}} imageStyle={styles.ProfileImage}>
-      <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', top: 182}}>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', top: 182}}>
         <View style={styles.StatusView}><Text style={styles.StatusText}>Local</Text></View>
         <Image source={{uri: 'https://pbs.twimg.com/media/ET0Tyl-UUAACA-a?format=jpg'}} style={styles.FlagImage} />
       </View>
