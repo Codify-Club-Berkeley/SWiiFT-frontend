@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, ImageBackground, Text, View, StyleSheet } from 'react-native';
 
-export default function SuggestedPersonCard() {
+const SuggestedPersonCard = () => {
   return (
      <View style={styles.Container}>
      <ImageBackground source={{uri: 'https://i0.wp.com/newspack-berkeleyside-cityside.s3.amazonaws.com/wp-content/uploads/2016/09/OskiRappels500.jpg'}} imageStyle={styles.ProfileImage}>
@@ -55,3 +55,5 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   }
 });
+
+export default SuggestedPersonCard;
