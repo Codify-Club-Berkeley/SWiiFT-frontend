@@ -10,7 +10,8 @@ import { StyleSheet, Text, View, Button } from "react-native";
 export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Login</Text>
+      <Text style={{ fontFamily: "Inter_400Regular" }}>Login</Text>
+
       <Button title="Go to Tabs" onPress={() => navigation.navigate("Tab")} />
       <StatusBar style="auto" />
     </View>
