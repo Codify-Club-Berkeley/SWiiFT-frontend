@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button } from "react-native";
+import BackButton from "../../components/buttons/BackButton";
 
 /**
  * Fix for "navigation implicitly has type any"
@@ -13,6 +14,7 @@ export default function Login({ navigation }) {
       <Text style={{ fontFamily: "Inter_400Regular" }}>Login</Text>
 
       <Button title="Go to Tabs" onPress={() => navigation.navigate("Tab")} />
+      {/* <BackButton></BackButton> */}
       <StatusBar style="auto" />
     </View>
   );
