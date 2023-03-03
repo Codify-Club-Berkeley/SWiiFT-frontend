@@ -6,7 +6,7 @@ export default function MainPage() {
       <Image style={styles.image} source={require('./assets/image.png')} resizeMode = "contain" />
       <Text style={styles.text}>Travel the {"\n"}right way.</Text>
       <Text style={styles.subtext}>Experience with locals.</Text>
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton} >
         <Text style={styles.loginText}>LOGIN</Text> 
       </TouchableOpacity>
       <TouchableOpacity style={styles.signUpButton}>
