@@ -8,10 +8,11 @@ import Messages from "../../pages/messages/Messages";
 
 export default function MessagesNavigator() {
   return (
-    <MessagesNav.Navigator>
+    <MessagesNav.Navigator screenOptions={{ headerShown: false }}>
       <MessagesNav.Screen
         name="Messages"
         component={Messages}
+        options={{ headerShown: false }}
       ></MessagesNav.Screen>
     </MessagesNav.Navigator>
   );

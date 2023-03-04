@@ -1,29 +1,46 @@
 import React from "react";
 import { Image, ImageBackground, Text, View, StyleSheet } from "react-native";
 
-const SuggestedPersonCard = ({ firstname, status, image, flag }) => {
+const SuggestedPersonCard = ({
+  firstname,
+  status,
+  image,
+  flag,
+}: {
+  firstname: string;
+  status: string;
+  image: string;
+  flag: String;
+}) => {
   return (
     <View style={styles.Container}>
-      <ImageBackground source={{ uri: image }} imageStyle={styles.ProfileImage}>
-        <View
-          style={{ flexDirection: "column", alignItems: "center", top: 152 }}
+      <View style={{ flex: 2.5 }}>
+        <ImageBackground
+          source={{ uri: image }}
+          imageStyle={styles.ProfileImage}
         >
           <View
-            style={{ flexDirection: "row", alignItems: "center", right: 5 }}
+            style={{ flexDirection: "column", alignItems: "center", top: 152 }}
           >
             <View
-              style={
-                status === "Local" ? styles.StatusLocal : styles.StatusTraveler
-              }
+              style={{ flexDirection: "row", alignItems: "center", right: 5 }}
             >
-              <Text style={styles.StatusText}>{status}</Text>
+              <View
+                style={
+                  status === "Local"
+                    ? styles.StatusLocal
+                    : styles.StatusTraveler
+                }
+              >
+                <Text style={styles.StatusText}>{status}</Text>
+              </View>
+              <Image source={{ uri: flag }} style={styles.FlagImage} />
             </View>
-            <Image source={{ uri: flag }} style={styles.FlagImage} />
+            <View style={styles.CompatibilityBarView} />
           </View>
-          <View style={styles.CompatibilityBarView} />
-        </View>
-      </ImageBackground>
-      <View style={{ position: "absolute", bottom: 0 }}>
+        </ImageBackground>
+      </View>
+      <View style={{ flex: 1 }}>
         <Text style={styles.NameText}>{firstname}</Text>
       </View>
     </View>
@@ -46,9 +63,8 @@ const Suggested = () => {
 
 const styles = StyleSheet.create({
   Container: {
-    position: "absolute",
-    width: 172,
-    height: 258,
+    flex: 1,
+    margin: 10,
   },
   ProfileImage: {
     width: 172,

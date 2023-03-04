@@ -8,8 +8,12 @@ import Locals from "../../pages/explore/Locals";
 
 export default function LocalsNavigator() {
   return (
-    <LocalNav.Navigator>
-      <LocalNav.Screen name="Locals" component={Locals}></LocalNav.Screen>
+    <LocalNav.Navigator screenOptions={{ headerShown: false }}>
+      <LocalNav.Screen
+        name="Locals"
+        component={Locals}
+        options={{ headerShown: false }}
+      ></LocalNav.Screen>
     </LocalNav.Navigator>
   );
 }
