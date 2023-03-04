@@ -17,7 +17,7 @@ const SuggestedPersonCard = ({ firstname, status, image, flag }) => {
             </View>
             <Image source={{ uri: flag }} style={styles.FlagImage} />
           </View>
-          <View style={styles.CompatabilityBarView} />
+          <View style={styles.CompatibilityBarView} />
         </View>
       </ImageBackground>
       <View style={{ position: 'absolute', bottom: 0 }}>
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     padding: 3,
   },
-  CompatabilityBarView: {
+  CompatibilityBarView: {
     height: 13,
     width: 156,
     borderRadius: 10,
