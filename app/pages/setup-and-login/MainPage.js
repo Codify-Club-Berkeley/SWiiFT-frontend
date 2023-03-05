@@ -1,15 +1,22 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
-export default function MainPage() {
+export default function MainPage({navigation}) {
+  const onLoginPress = () => {
+    navigation.navigate('Login')
+  }
+  const onSignUpPress = () => {
+    navigation.navigate('SignUp')
+  }
+
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('./assets/image.png')} resizeMode = "contain" />
+      <Image style={styles.image} source={require('../../assets/image.png')} resizeMode = "contain" />
       <Text style={styles.text}>Travel the {"\n"}right way.</Text>
       <Text style={styles.subtext}>Experience with locals.</Text>
-      <TouchableOpacity style={styles.loginButton} >
+      <TouchableOpacity style={styles.loginButton} onPress={() => onLoginPress()}>
         <Text style={styles.loginText}>LOGIN</Text> 
       </TouchableOpacity>
-      <TouchableOpacity style={styles.signUpButton}>
+      <TouchableOpacity style={styles.signUpButton} onPress={() => onSignUpPress()}>
         <Text style={styles.signUpText}>SIGN UP</Text> 
       </TouchableOpacity>
     </View>

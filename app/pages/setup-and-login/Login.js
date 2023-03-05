@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 export default function Login() {
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('./assets/swift-small-logo.png')} resizeMode = "contain" />
+      <Image style={styles.image} source={require('../../assets/swiift-small-logo.png')} resizeMode = "contain" />
       <Text style={styles.text}>Welcome back!</Text>
       <TouchableOpacity style={styles.loginButton}>
         <Text style={styles.loginText}>LOG IN</Text> 

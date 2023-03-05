@@ -10,7 +10,9 @@ import AppEntryNavigator from "./AppEntryNavigation";
 export default function RootNavigation() {
   return (
     <NavigationContainer>
-      <Root.Navigator>
+      <Root.Navigator
+        screenOptions={{headerShown: false}}
+      >
         <Root.Screen name="AppEntry" component={AppEntryNavigator}></Root.Screen>
         <Root.Screen name="Tab" component={TabNavigation}></Root.Screen>
       </Root.Navigator>
