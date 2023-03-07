@@ -7,11 +7,11 @@ import {
   ImageBackground,
 } from "react-native";
 
-export default function Login({ navigation }) {
+export default function SignUp({ navigation }) {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("../../assets/images/login-images/beach.png")}
+        source={require("../../assets/images/login-images/mountain.png")}
         resizeMode="cover"
         style={{ flex: 1, justifyContent: "center", width: "100%" }}
       >
@@ -21,12 +21,12 @@ export default function Login({ navigation }) {
             source={require("../../assets/images/swiift-small-logo.png")}
             resizeMode="contain"
           />
-          <Text style={styles.text}>Welcome back!</Text>
+          <Text style={styles.text}>Create Account</Text>
           <TouchableOpacity
             style={styles.loginButton}
             onPress={() => navigation.navigate("Tab")}
           >
-            <Text style={styles.loginText}>LOG IN</Text>
+            <Text style={styles.loginText}>SIGN UP</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -37,6 +37,7 @@ export default function Login({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
     alignItems: "center",
     flexDirection: "column",
   },
@@ -69,9 +70,3 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
-
-// /**
-//  * Fix for "navigation implicitly has type any"
-//  * https://stackoverflow.com/questions/63132548/react-navigation-5-error-binding-element-navigation-implicitly-has-an-any-ty
-//  * https://reactnavigation.org/docs/typescript/
-//  */

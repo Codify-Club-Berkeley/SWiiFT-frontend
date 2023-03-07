@@ -8,10 +8,11 @@ import Profile from "../../pages/profiles/Profile";
 
 export default function ProfileNavigator() {
   return (
-    <ProfileNav.Navigator>
+    <ProfileNav.Navigator screenOptions={{ headerShown: false }}>
       <ProfileNav.Screen
         name="Profiles"
         component={Profile}
+        options={{ headerShown: false }}
       ></ProfileNav.Screen>
     </ProfileNav.Navigator>
   );
