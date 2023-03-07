@@ -33,11 +33,11 @@ export default function Messages() {
   const [isMessages, setIsMessages] = useState(true);
   
   return (    
-    <View style={[styles.container,{flexDirection: 'column',},]}>
+    <View style={[styles.container,{flexDirection: 'column', flex:1},]}>
       <StatusBar style="auto" />
 
       <View style={[styles.headerContainer]}>
-        <View style={{flex:1}}>
+        <View style={[{flex:1}, styles.titleContainer]}>
           <Text style={styles.pageTitleText}>Chats</Text>
         </View>
 
@@ -96,6 +96,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
+  },
+
+  titleContainer: {
+    justifyContent: "center",
+    alignItems: "center"
   },
 
   buttonContainer: {
