@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 50,
     fontWeight: "bold",
-    paddingTop: 10,
   },
   subtext: {
     alignSelf: "left",
