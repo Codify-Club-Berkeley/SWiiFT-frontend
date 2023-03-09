@@ -4,6 +4,9 @@ export default function Login({navigation}) {
   const onFooterLinkPressNav = () => {
     navigation.navigate('SignUp')
   }
+  const onForgotLinkPressNav = () => {
+    navigation.navigate('MainPage')
+  }
 
 
   return (
@@ -26,7 +29,7 @@ export default function Login({navigation}) {
           underlineColorAndroid="transparent"
           autoCapitalize="none"
         />
-        <Text onPress={onFooterLinkPressNav} style={styles.forgot}>Forgot password?</Text>
+        <Text onPress={onForgotLinkPressNav} style={styles.forgot}>Forgot password?</Text>
         <TouchableOpacity style={styles.loginButton}>
           <Text style={styles.loginText}>LOG IN</Text> 
         </TouchableOpacity>
