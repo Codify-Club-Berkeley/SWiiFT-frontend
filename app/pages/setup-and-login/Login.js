@@ -8,7 +8,7 @@ export default function Login({navigation}) {
 
   return (
     <View style={styles.container}>
-      {/* <ImageBackground style={styles.background} source={require('../../assets/loginBackground.png')} resizeMode = "cover" > */}
+      <ImageBackground style={styles.background} source={require('../../assets/loginBackground.png')} >
         <Image style={styles.image} source={require('../../assets/swiift-small-logo.png')} resizeMode = "contain" />
         <Text style={styles.text}>Welcome back!</Text>
         <TextInput
@@ -26,13 +26,14 @@ export default function Login({navigation}) {
           underlineColorAndroid="transparent"
           autoCapitalize="none"
         />
+        <Text onPress={onFooterLinkPressNav} style={styles.forgot}>Forgot password?</Text>
         <TouchableOpacity style={styles.loginButton}>
           <Text style={styles.loginText}>LOG IN</Text> 
         </TouchableOpacity>
         <View style={styles.footerView}>
             <Text style={styles.footerText}>Don't have an account? <Text onPress={onFooterLinkPressNav} style={styles.footerLink}>Sign up</Text></Text>
         </View>
-      {/* </ImageBackground> */}
+      </ImageBackground>
     </View>
   );
 }
@@ -40,7 +41,9 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+    resizeMode: 'cover',
     justifyContent: 'center',
+    width: 400,
   },
   container: {
     flex: 1,
@@ -48,32 +51,46 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: "#2D2C2E",
   },
+  forgot: {
+    color: "white",
+    alignSelf: "flex-end",
+    marginRight: 20,
+
+  },
   image: {
-    marginTop: 70,
-    width: "30%",
-    height: "30%",
+    marginTop: 140,
+    alignSelf: "center",
+    width: 100,
+    height: 100,
   },
   text: {
     alignSelf: "center",
     paddingHorizontal: 20,
     color: "white",
-    fontSize: 45,
+    fontSize: 40,
     fontWeight: "bold",
+    marginVertical: 20,
   },
   input: {
-    height: 48,
-    width: "80%",
+    alignSelf: "center",
+    height: 50,
+    width: 350,
     borderRadius: 5,
+    borderColor: "white",
     overflow: 'hidden',
     backgroundColor: 'white',
+    opacity: 0.7,
     marginTop: 10,
     marginBottom: 10,
     marginLeft: 30,
     marginRight: 30,
-    paddingLeft: 16
+    fontSize: 15,
+    paddingLeft: 16,
+    placeholderTextColor: "#2D2C2E",
   },
   loginButton: {
-    width:"80%",
+    alignSelf: "center",
+    width: 350,
     borderRadius: 12,
     borderWidth: 3,
     borderColor: "white",
@@ -91,7 +108,7 @@ const styles = StyleSheet.create({
   footerView: {
     flex: 1,
     alignItems: "center",
-    marginTop: 120
+    marginTop: 120,
   },
   footerText: {
     fontSize: 16,

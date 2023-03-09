@@ -7,7 +7,7 @@ export default function SignUp({navigation}) {
 
   return (
     <View style={styles.container}>
-      {/* <ImageBackground style={styles.background} source={require('../../assets/signupBackground.png')} resizeMode = "cover" > */}
+      <ImageBackground style={styles.background} source={require('../../assets/signupBackground.png')}>
         <Image style={styles.image} source={require('../../assets/swiift-small-logo.png')} resizeMode = "contain" />
         <Text style={styles.text}>Create Account</Text>
         <TextInput
@@ -31,7 +31,7 @@ export default function SignUp({navigation}) {
         <View style={styles.footerView}>
             <Text style={styles.footerText}>Already have an account? <Text onPress={onFooterLinkPressNav} style={styles.footerLink}>Log in</Text></Text>
         </View>
-      {/* </ImageBackground> */}
+      </ImageBackground>
     </View>
   );
 }
@@ -39,7 +39,9 @@ export default function SignUp({navigation}) {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+    resizeMode: 'cover',
     justifyContent: 'center',
+    width: 400,
   },
   container: {
     flex: 1,
@@ -48,31 +50,39 @@ const styles = StyleSheet.create({
     backgroundColor: "#2D2C2E",
   },
   image: {
-    marginTop: 70,
-    width: "30%",
-    height: "30%",
+    marginTop: 140,
+    alignSelf: "center",
+    width: 100,
+    height: 100,
   },
   text: {
     alignSelf: "center",
     paddingHorizontal: 20,
     color: "white",
-    fontSize: 45,
+    fontSize: 40,
     fontWeight: "bold",
+    marginVertical: 20,
   },
   input: {
-    height: 48,
-    width: "80%",
+    alignSelf: "center",
+    height: 50,
+    width: 350,
     borderRadius: 5,
+    borderColor: "white",
     overflow: 'hidden',
     backgroundColor: 'white',
+    opacity: 0.7,
     marginTop: 10,
     marginBottom: 10,
     marginLeft: 30,
     marginRight: 30,
-    paddingLeft: 16
+    fontSize: 15,
+    paddingLeft: 16,
+    placeholderTextColor: "#2D2C2E",
   },
   signUpButton: {
-    width:"80%",
+    alignSelf: "center",
+    width: 350,
     borderRadius: 12,
     borderWidth: 3,
     borderColor: "white",
