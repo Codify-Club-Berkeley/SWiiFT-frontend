@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
   input: {
     alignSelf: "center",
-    height: 50,
+    height: 60,
     width: 350,
     borderRadius: 5,
     borderColor: "white",
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginLeft: 30,
     marginRight: 30,
-    fontSize: 15,
+    fontSize: 19,
     paddingLeft: 16,
     placeholderTextColor: "#2D2C2E",
   },
