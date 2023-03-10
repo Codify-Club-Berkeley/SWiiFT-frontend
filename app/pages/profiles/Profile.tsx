@@ -8,6 +8,14 @@ import {
   TextInput,
   Button,
 } from "react-native";
+import {
+  Inter_200ExtraLight,
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_600SemiBold,
+  Inter_700Bold,
+} from "@expo-google-fonts/inter";
+import EditButton from "../../components/buttons/EditButton";
 
 import texts from "../../styles/TextStyles";
 
@@ -77,14 +85,11 @@ export default function Profile({ navigation }) {
           <View style={styles.imageTexts}>
             <View style={styles.textContainer}>
               <Text style={styles.title}>Image Gallery</Text>
-              <Button
-                //onPress={onPressLearnMore}
-                title="Edit >"
-                color="gray"
-                //accessibilityLabel="Learn more about this purple button"
-              />
+              <EditButton></EditButton>
             </View>
-            <Text style={styles.subheading}>Show your best travel pics!</Text>
+            <View style={styles.subheadingContainer}>
+              <Text style={styles.subheading}>Show your best travel pics!</Text>
+            </View>
           </View>
           <View style={styles.galleryImages}>
             <Image
@@ -120,14 +125,8 @@ export default function Profile({ navigation }) {
           <View style={styles.horizontalBarrier}></View>
           <View style={styles.imageTexts}>
             <View style={styles.textContainer}>
-              <Text style={texts.header}>About Me</Text>
-              {/* TODO: Make this into a Reusable Component */}
-              <Button
-                //onPress={onPressLearnMore}
-                title="Edit >"
-                color="gray"
-                //accessibilityLabel="Learn more about this purple button"
-              />
+              <Text style={styles.title}>About Me</Text>
+              <EditButton></EditButton>
             </View>
             <View style={styles.subheadingContainer}>
               <Text style={styles.subheading}>
@@ -148,12 +147,7 @@ export default function Profile({ navigation }) {
           <View style={styles.imageTexts}>
             <View style={styles.textContainer}>
               <Text style={styles.title}>Country of origin</Text>
-              <Button
-                //onPress={onPressLearnMore}
-                title="Edit >"
-                color="gray"
-                //accessibilityLabel="Learn more about this purple button"
-              />
+              <EditButton></EditButton>
             </View>
             <Text style={styles.subheading}>City</Text>
             <Text style={styles.subheading}>State</Text>
@@ -192,23 +186,18 @@ const styles = StyleSheet.create({
     //justifyContent: "center",
   },
   header: {
-    //position: "absolute",
     flex: 2,
     width: "100%",
     height: "34%",
   },
   image: {
-    //position: "absolute",
     left: "7%",
     top: "-35%",
   },
   textName: {
-    //position: "absolute",
-    //width: 214,
-    //height: 37,
     left: "45%",
     top: "-85%",
-    //fontFamily: "Inter",
+    fontFamily: "Inter_700Bold",
     fontWeight: "700",
     fontSize: 24,
     lineHeight: 29,
@@ -218,12 +207,9 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
   },
   textAge: {
-    //position: "absolute",
-    //width: 214,
-    //height: 37,
     left: "45%",
     top: "-85%",
-    //fontFamily: "Inter"
+    fontFamily: "Inter_600SemiBold",
     fontWeight: "600",
     fontSize: 20,
     lineHeight: 29,
@@ -254,8 +240,6 @@ const styles = StyleSheet.create({
     //backgroundColor: 'red',
     alignItems: "center",
     textAlign: "center",
-    //width: 125,
-    //height: 50,
   },
   centerItem: {
     marginTop: "10%",
@@ -264,11 +248,6 @@ const styles = StyleSheet.create({
     //backgroundColor: 'green'
     alignItems: "center",
     justifyContent: "center",
-    //width: 125,
-    //height: 50,
-    //borderColor: "#FFFFFF",
-    //borderRightWidth: 5,
-    //borderLeftWidth: 5,
   },
   rightItem: {
     height: 90,
@@ -281,8 +260,6 @@ const styles = StyleSheet.create({
     //backgroundColor: 'red',
     alignItems: "center",
     textAlign: "center",
-    //width: 125,
-    //height: 50,
   },
   barrier: {
     marginTop: "10%",
@@ -300,12 +277,13 @@ const styles = StyleSheet.create({
     marginTop: 2,
     width: 70,
     height: 50,
-    backgroundColor: "grey",
+    backgroundColor: "#E0E0E0",
     borderRadius: 50 / 4,
   },
   textMeetupsNum: {
     marginTop: -10,
     fontWeight: "700",
+    fontFamily: "Inter_700Bold",
     fontSize: 50,
     lineHeight: 77,
     display: "flex",
@@ -324,6 +302,7 @@ const styles = StyleSheet.create({
   levelNum: {
     marginLeft: 50 / 3,
     fontWeight: "700",
+    fontFamily: "Inter_700Bold",
     fontSize: 30,
     lineHeight: 39,
     display: "flex",
@@ -333,6 +312,7 @@ const styles = StyleSheet.create({
   },
   textCTR: {
     fontWeight: "500",
+    fontFamily: "Inter_500Medium",
     fontSize: 20,
     lineHeight: 24,
     display: "flex",
@@ -342,6 +322,7 @@ const styles = StyleSheet.create({
   },
   textMeetups: {
     fontWeight: "600",
+    fontFamily: "Inter_600SemiBold",
     fontSize: 20,
     lineHeight: 24,
     display: "flex",
@@ -351,6 +332,7 @@ const styles = StyleSheet.create({
   },
   textLevel: {
     fontWeight: "600",
+    fontFamily: "Inter_600SemiBold",
     fontSize: 20,
     lineHeight: 24,
     display: "flex",
@@ -365,7 +347,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     //flexWrap: 'wrap',
     marginTop: "12%",
-    //marginBottom: "8%",
+    marginBottom: "-4%",
   },
   horizontalBarrier: {
     height: 5,
@@ -395,25 +377,22 @@ const styles = StyleSheet.create({
     //backgroundColor: "green",
   },
   title: {
+    marginBottom: "2%",
     flex: 1,
     flexWrap: "wrap",
     fontWeight: "700",
+    fontFamily: "Inter_700Bold",
     fontSize: 20,
-    lineHeight: 38,
-    display: "flex",
-    alignItems: "center",
+    //backgroundColor: "red",
+    lineHeight: 34,
     letterSpacing: 0.055,
     color: "white",
-  },
-  editButton: {
-    flex: 1,
-    //backgroundColor: "red",
-    color: "white",
-    textAlign: "right",
   },
   subheadingContainer: {
     flex: 1,
     flexDirection: "row",
+    flexWrap: "wrap",
+    //backgroundColor: "green",
   },
   subheading: {
     flex: 1,
@@ -421,16 +400,19 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "left",
     fontWeight: "500",
+    fontFamily: "Inter_500Medium",
     fontSize: 20,
     lineHeight: 24,
     //display: "flex",
     alignItems: "center",
     letterSpacing: 0.055,
+    marginBottom: "5%",
+    //backgroundColor: "blue",
   },
   galleryImages: {
     height: "100%",
     width: "86%",
-    marginTop: "5%",
+    marginTop: "2%",
     //marginBottom: "10%",
     marginLeft: "7%",
     marginRight: "7%",
@@ -448,7 +430,9 @@ const styles = StyleSheet.create({
   },
   aboutmeBox: {
     flexWrap: "wrap",
-    height: 150,
+    height: 180,
+    fontFamily: "Inter_200ExtraLight",
+    fontSize: 24,
     margin: "7%",
     borderWidth: 1,
     padding: 10,
@@ -456,5 +440,6 @@ const styles = StyleSheet.create({
     color: "#FFF",
     //opacity: .55,
     borderRadius: 10,
+    borderColor: "#575658",
   },
 });
