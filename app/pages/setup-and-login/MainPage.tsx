@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
+<<<<<<< HEAD:app/pages/setup-and-login/MainPage.tsx
 export default function MainPage({ navigation }) {
   return (
     <View style={styles.container}>
@@ -21,6 +22,26 @@ export default function MainPage({ navigation }) {
         onPress={() => navigation.navigate("SignUp")}
       >
         <Text style={styles.signUpText}>SIGN UP</Text>
+=======
+export default function MainPage({navigation}) {
+  const onLoginPress = () => {
+    navigation.navigate('Login')
+  }
+  const onSignUpPress = () => {
+    navigation.navigate('SignUp')
+  }
+
+  return (
+    <View style={styles.container}>
+      <Image style={styles.image} source={require('../../assets/image.png')} resizeMode = "contain" />
+      <Text style={styles.text}>Travel the {"\n"}right way.</Text>
+      <Text style={styles.subtext}>Experience with locals.</Text>
+      <TouchableOpacity style={styles.loginButton} onPress={() => onLoginPress()}>
+        <Text style={styles.loginText}>LOGIN</Text> 
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.signUpButton} onPress={() => onSignUpPress()}>
+        <Text style={styles.signUpText}>SIGN UP</Text> 
+>>>>>>> 39e2f47843cdfb5b53b037a632dc2cb2ff279bd4:app/pages/setup-and-login/MainPage.js
       </TouchableOpacity>
     </View>
   );
@@ -43,7 +64,6 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 50,
     fontWeight: "bold",
-    paddingTop: 10,
   },
   subtext: {
     alignSelf: "left",
