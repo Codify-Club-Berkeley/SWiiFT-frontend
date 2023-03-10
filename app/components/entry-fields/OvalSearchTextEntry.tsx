@@ -27,6 +27,7 @@ export default function OvalSearchTextEntry() {
 const styles = StyleSheet.create({
   input: {
     height: 40,
+    width: 150,
     margin: 12,
     borderWidth: 1,
   },

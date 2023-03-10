@@ -1,31 +1,46 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, ScrollView, TextInput, Button } from "react-native";
-import { Inter_200ExtraLight, Inter_400Regular, Inter_500Medium, Inter_600SemiBold ,Inter_700Bold } from "@expo-google-fonts/inter";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  TextInput,
+  Button,
+} from "react-native";
+import {
+  Inter_200ExtraLight,
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_600SemiBold,
+  Inter_700Bold,
+} from "@expo-google-fonts/inter";
 import EditButton from "../../components/buttons/EditButton";
 
-export default function Profile() {
-  return (
-    <ScrollView style = {styles.scrollView}>
-      <View style={styles.container}>
+import texts from "../../styles/TextStyles";
 
+export default function Profile({ navigation }) {
+  return (
+    <ScrollView style={styles.scrollView}>
+      <View style={styles.container}>
         {/*   Header section    */}
 
         <View style={styles.header}>
-          <Image 
-            source={require('../../assets/cover-pic.png')} 
-            style = {{
+          <Image
+            source={require("../../assets/cover-pic.png")}
+            style={{
               height: "100%",
               width: "100%",
             }}
           />
           <View style={styles.image}>
-          <Image 
-            source={require('../../assets/ProfileEMPTY.png')} 
-            style = {{
-              height: 120,
-              width: 120
-            }}
-          />
+            <Image
+              source={require("../../assets/ProfileEMPTY.png")}
+              style={{
+                height: 120,
+                width: 120,
+              }}
+            />
           </View>
           <Text style={styles.textName}>First</Text>
           <Text style={styles.textAge}>XX Gender</Text>
@@ -53,9 +68,9 @@ export default function Profile() {
           <View style={styles.barrier}></View>
           <View style={styles.rightItem}>
             <View style={styles.box1}>
-            <View style={styles.levelCircle}>
-              <Text style={styles.levelNum}>1</Text>
-            </View>
+              <View style={styles.levelCircle}>
+                <Text style={styles.levelNum}>1</Text>
+              </View>
             </View>
             <View style={styles.box2}>
               <Text style={styles.textLevel}>Level</Text>
@@ -66,34 +81,40 @@ export default function Profile() {
         {/*   Image gallery section    */}
 
         <View style={styles.galleryContainer}>
-          <View style = {styles.horizontalBarrier}></View>
+          <View style={styles.horizontalBarrier}></View>
           <View style={styles.imageTexts}>
-            <View style = {styles.textContainer}>
+            <View style={styles.textContainer}>
               <Text style={styles.title}>Image Gallery</Text>
               <EditButton></EditButton>
             </View>
-            <View style = {styles.subheadingContainer}>
+            <View style={styles.subheadingContainer}>
               <Text style={styles.subheading}>Show your best travel pics!</Text>
             </View>
           </View>
           <View style={styles.galleryImages}>
-            <Image source={require('../../assets/placeholder.png')} 
-              style = {styles.placeholderImage}
+            <Image
+              source={require("../../assets/placeholder.png")}
+              style={styles.placeholderImage}
             />
-            <Image source={require('../../assets/placeholder.png')} 
-              style = {styles.placeholderImage}
+            <Image
+              source={require("../../assets/placeholder.png")}
+              style={styles.placeholderImage}
             />
-             <Image source={require('../../assets/placeholder.png')} 
-              style = {styles.placeholderImage}
+            <Image
+              source={require("../../assets/placeholder.png")}
+              style={styles.placeholderImage}
             />
-            <Image source={require('../../assets/placeholder.png')} 
-              style = {styles.placeholderImage}
+            <Image
+              source={require("../../assets/placeholder.png")}
+              style={styles.placeholderImage}
             />
-            <Image source={require('../../assets/placeholder.png')} 
-              style = {styles.placeholderImage}
+            <Image
+              source={require("../../assets/placeholder.png")}
+              style={styles.placeholderImage}
             />
-             <Image source={require('../../assets/placeholder.png')} 
-              style = {styles.placeholderImage}
+            <Image
+              source={require("../../assets/placeholder.png")}
+              style={styles.placeholderImage}
             />
           </View>
         </View>
@@ -101,14 +122,16 @@ export default function Profile() {
         {/* About Me Section */}
 
         <View style={styles.galleryContainer}>
-          <View style = {styles.horizontalBarrier}></View>
+          <View style={styles.horizontalBarrier}></View>
           <View style={styles.imageTexts}>
-            <View style = {styles.textContainer}>
+            <View style={styles.textContainer}>
               <Text style={styles.title}>About Me</Text>
               <EditButton></EditButton>
             </View>
-            <View style = {styles.subheadingContainer}>
-              <Text style={styles.subheading}>What would you like to do with people you meet?</Text>
+            <View style={styles.subheadingContainer}>
+              <Text style={styles.subheading}>
+                What would you like to do with people you meet?
+              </Text>
             </View>
           </View>
         </View>
@@ -118,12 +141,11 @@ export default function Profile() {
           multiline
           placeholder="e.g. grab drinks / share a meal / go out tonight / play sports / explore the city / visit a museum..."
           placeholderTextColor="#FFF"
-          >
-        </TextInput>
+        ></TextInput>
 
         <View style={styles.galleryContainer}>
           <View style={styles.imageTexts}>
-            <View style = {styles.textContainer}>
+            <View style={styles.textContainer}>
               <Text style={styles.title}>Country of origin</Text>
               <EditButton></EditButton>
             </View>
@@ -133,7 +155,7 @@ export default function Profile() {
           </View>
           <View style={styles.horizontalBarrier}></View>
           <View style={styles.imageTexts}>
-            <View style = {styles.textContainer}>
+            <View style={styles.textContainer}>
               <Text style={styles.title}>Country of origin</Text>
             </View>
             <Text style={styles.subheading}>City</Text>
@@ -143,6 +165,14 @@ export default function Profile() {
         </View>
 
         <StatusBar style="auto" />
+
+        {/* Sample Button */}
+        <Button
+          title="sample nav"
+          onPress={() => {
+            navigation.navigate("FAQ");
+          }}
+        ></Button>
       </View>
     </ScrollView>
   );
@@ -175,7 +205,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     letterSpacing: 0.055,
     color: "#FFFFFF",
-    
   },
   textAge: {
     left: "45%",
@@ -188,7 +217,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     letterSpacing: 0.055,
     color: "white",
-    
   },
   scrollView: {
     backgroundColor: "#2D2C2E",
@@ -196,13 +224,12 @@ const styles = StyleSheet.create({
   profileData: {
     flex: 1,
     justifyContent: "center",
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    flexWrap: "wrap",
     marginTop: "12%",
     marginBottom: "-5%",
-    
   },
-  leftItem :{
+  leftItem: {
     height: 90,
     marginTop: "10%",
     //marginBottom: "10%",
@@ -214,7 +241,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     textAlign: "center",
   },
-  centerItem :{
+  centerItem: {
     marginTop: "10%",
     flex: 3,
     flexDirection: "column",
@@ -222,7 +249,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  rightItem :{
+  rightItem: {
     height: 90,
     marginTop: "10%",
     //marginBottom: "10%",
@@ -236,9 +263,9 @@ const styles = StyleSheet.create({
   },
   barrier: {
     marginTop: "10%",
-    flex: .1,
+    flex: 0.1,
     backgroundColor: "white",
-    borderRadius: 3/2,
+    borderRadius: 3 / 2,
   },
   box1: {
     flex: 3,
@@ -251,7 +278,7 @@ const styles = StyleSheet.create({
     width: 70,
     height: 50,
     backgroundColor: "#E0E0E0",
-    borderRadius: 50/4
+    borderRadius: 50 / 4,
   },
   textMeetupsNum: {
     marginTop: -10,
@@ -269,11 +296,11 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     backgroundColor: "#BC7BBC",
-    borderRadius: 50/2,
+    borderRadius: 50 / 2,
     justifyContent: "center",
   },
   levelNum: {
-    marginLeft: 50/3,
+    marginLeft: 50 / 3,
     fontWeight: "700",
     fontFamily: "Inter_700Bold",
     fontSize: 30,
@@ -317,11 +344,10 @@ const styles = StyleSheet.create({
   galleryContainer: {
     flex: 2,
     justifyContent: "center",
-    flexDirection: 'column',
+    flexDirection: "column",
     //flexWrap: 'wrap',
     marginTop: "12%",
     marginBottom: "-4%",
-
   },
   horizontalBarrier: {
     height: 5,
@@ -340,7 +366,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     flexWrap: "wrap",
     //backgroundColor: "orange",
-
   },
   textContainer: {
     //marginLeft: "7%",
@@ -362,7 +387,6 @@ const styles = StyleSheet.create({
     lineHeight: 34,
     letterSpacing: 0.055,
     color: "white",
-    
   },
   subheadingContainer: {
     flex: 1,
