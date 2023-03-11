@@ -11,7 +11,7 @@ const EditButton = ({}) => {
 
 const styles = StyleSheet.create({
   button: {
-    marginTop:"1.5%",
+    //marginTop:"1.5%",
     flex: 1,
     //backgroundColor: "red",
     textAlign: "right",
