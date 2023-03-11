@@ -19,7 +19,7 @@ import EditButton from "../../components/buttons/EditButton";
 
 import texts from "../../styles/TextStyles";
 
-export default function Profile({ navigation }) {
+export default function Profile({navigation}: {navigation:any}) {
   return (
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
