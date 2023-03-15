@@ -1,9 +1,9 @@
 import React from 'react';
 import {
+  Dimensions,
   StyleSheet,
   Text,
   TouchableOpacity,
-  Dimensions,
   View,
 } from 'react-native';
 
