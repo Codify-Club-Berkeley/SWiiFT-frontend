@@ -11,15 +11,15 @@ interface Props {
   onPress: () => void;
   label: string;
   defaultSize?: boolean;
-  transparent?: boolean;
+  darkGray?: boolean;
   uppercase?: boolean;
   disabled?: boolean;
 }
 
 const { width } = Dimensions.get('window');
 
-const OvalButton = ({ onPress, label, defaultSize=true, transparent=false, uppercase=true, disabled=false }: Props) => {
-  const backgroundColor = transparent ? 'transparent' : '#9B6EB7';
+const OvalButton = ({ onPress, label, defaultSize=true, darkGray=false, uppercase=true, disabled=false }: Props) => {
+  const backgroundColor = darkGray ? '#2D2C2E' : '#9B6EB7';
   const size = defaultSize ? styles.defaultSize : { width: width * 0.8 };
   const textTransform = uppercase ? 'uppercase' : 'none';
 
