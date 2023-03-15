@@ -4,14 +4,14 @@ import { Inter_500Medium } from '@expo-google-fonts/inter';
 const EditButton = ({}) => {
   return (
     <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Edit ❯</Text>
-      </TouchableOpacity>
+      <Text style={styles.buttonText}>Edit ❯</Text>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    marginTop:"1.5%",
+    //marginTop:"1.5%",
     flex: 1,
     //backgroundColor: "red",
     textAlign: "right",

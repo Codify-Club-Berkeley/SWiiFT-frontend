@@ -7,6 +7,8 @@ import {
   ScrollView,
   TextInput,
   Button,
+  Touchable,
+  TouchableOpacity,
 } from "react-native";
 import {
   Inter_200ExtraLight,
@@ -15,37 +17,63 @@ import {
   Inter_600SemiBold,
   Inter_700Bold,
 } from "@expo-google-fonts/inter";
+
 import EditButton from "../../components/buttons/EditButton";
-
 import texts from "../../styles/TextStyles";
+import colors from "../../styles/ColorStyles";
+import MoreInfoButton from "../../components/buttons/MoreInfoButton";
 
-export default function Profile({navigation}: {navigation:any}) {
+import LinearGradient from "react-native-linear-gradient"
+
+export default function Profile({navigation}:{navigation:any}) {
   return (
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
-        {/*   Header section    */}
+
+        {/********* Header Section *********/}
 
         <View style={styles.header}>
           <Image
             source={require("../../assets/cover-pic.png")}
             style={{
-              height: "100%",
+              height: "70%",
               width: "100%",
+            
             }}
           />
+          <TouchableOpacity style={styles.cameraCircle2}>
+            <Image
+              source={require("../../assets/camera.png")}
+              style={styles.camera2}
+            />
+          </TouchableOpacity>
           <View style={styles.image}>
             <Image
               source={require("../../assets/ProfileEMPTY.png")}
               style={{
-                height: 120,
-                width: 120,
+                height: 150,
+                width: 150,
               }}
             />
+            <TouchableOpacity style={styles.cameraCircle}>
+              <Image
+                source={require("../../assets/camera.png")}
+                style={styles.camera}
+              />
+            </TouchableOpacity>
           </View>
           <Text style={styles.textName}>First</Text>
           <Text style={styles.textAge}>XX Gender</Text>
+          <TouchableOpacity>
+            <Image
+              source={require("../../assets/editicon.png")}
+              style = {styles.editIcon}
+            />
+          </TouchableOpacity>
+          <Text style={styles.cityName}>City Name</Text>
         </View>
-        {/*   Profile data section    */}
+
+        {/********* Profile Data *********/}
 
         <View style={styles.profileData}>
           <View style={styles.leftItem}>
@@ -78,7 +106,7 @@ export default function Profile({navigation}: {navigation:any}) {
           </View>
         </View>
 
-        {/*   Image gallery section    */}
+       {/********* Image Gallery *********/}
 
         <View style={styles.galleryContainer}>
           <View style={styles.horizontalBarrier}></View>
@@ -119,7 +147,7 @@ export default function Profile({navigation}: {navigation:any}) {
           </View>
         </View>
 
-        {/* About Me Section */}
+        {/********* About Me Section *********/}
 
         <View style={styles.galleryContainer}>
           <View style={styles.horizontalBarrier}></View>
@@ -143,27 +171,110 @@ export default function Profile({navigation}: {navigation:any}) {
           placeholderTextColor="#FFF"
         ></TextInput>
 
+        {/********* Info Section *********/}
+
+        <View style={styles.infoContainer}>
+          <View style={styles.infoTexts}>
+            <View style={styles.textContainer}>
+              <Text style={styles.infoTitle}>Country of origin</Text>
+            </View>
+            <Text style={styles.infoText}>City</Text>
+            <Text style={styles.infoText}>State</Text>
+            <Text style={styles.infoText}>Country</Text>
+          </View>
+          <View style={styles.greyhorizontalBarrier}></View>
+          <View style={styles.infoTexts}>
+            <View style={styles.textContainer}>
+              <Text style={styles.infoTitle}>Education</Text>
+            </View>
+            <Text style={styles.infoText}>University</Text>
+            <Text style={styles.infoText}>Major</Text>
+            <Text style={styles.infoText}>XXXX Degree</Text>
+          </View>
+          <View style={styles.greyhorizontalBarrier}></View>
+          <View style={styles.infoTexts}>
+            <View style={styles.textContainer}>
+              <Text style={styles.infoTitle}>Work</Text>
+            </View>
+            <Text style={styles.infoText}>Job Title</Text>
+            <Text style={styles.infoText}>Industry</Text>
+          </View>
+          <View style={styles.greyhorizontalBarrier}></View>
+          <View style={styles.infoTexts}>
+            <View style={styles.textContainer}>
+              <Text style={styles.infoTitle}>Language</Text>
+            </View>
+            <Text style={styles.infoText}>Primary Language</Text>
+            <Text style={styles.infoText}>languages</Text>
+          </View>
+          <View style={styles.horizontalBarrier}></View>
+        </View>
+
+        {/********* Hobbies *********/}
+
         <View style={styles.galleryContainer}>
           <View style={styles.imageTexts}>
             <View style={styles.textContainer}>
-              <Text style={styles.title}>Country of origin</Text>
+              <Text style={styles.title}>Hobbies & Organizations</Text>
               <EditButton></EditButton>
             </View>
-            <Text style={styles.subheading}>City</Text>
-            <Text style={styles.subheading}>State</Text>
-            <Text style={styles.subheading}>Country</Text>
-          </View>
-          <View style={styles.horizontalBarrier}></View>
-          <View style={styles.imageTexts}>
-            <View style={styles.textContainer}>
-              <Text style={styles.title}>Country of origin</Text>
+            <View style={styles.subheadingContainer}>
+              <Text style={styles.subheading}>
+                Tell us what you love to do!
+              </Text>
             </View>
-            <Text style={styles.subheading}>City</Text>
-            <Text style={styles.subheading}>State</Text>
-            <Text style={styles.subheading}>Country</Text>
           </View>
         </View>
+        <View style={[styles.hobbies, colors.ovalButtonPurple]}>
+          <Text style={styles.hobbyText}>hobby</Text>
+        </View>
+        <View style={[styles.hobbyArea]}></View>
+        <View style={styles.horizontalBarrier}></View>
 
+        {/********* Travel *********/}
+
+        <View style={[styles.galleryContainer, {marginTop: "5%"}]}>
+          <View style={[styles.imageTexts,]}>
+            <View style={styles.textContainer}>
+              <Text style={styles.title}>Travel</Text>
+            </View>
+            <View style={styles.subheadingContainer}>
+              <Text style={styles.subheading}>
+                A few country-specifics.
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View style={[styles.infoTexts, {marginTop: "5%"}]}>
+          <View style={styles.textContainer}>
+            <Text style={styles.infoTitle}>Country count</Text>
+            <EditButton></EditButton>
+          </View>
+          <Text style={styles.infoText}>Country count</Text>
+        </View>
+        <View style={styles.greyhorizontalBarrier}></View>
+        <View style={[styles.infoTexts]}>
+          <View style={styles.textContainer}>
+            <Text style={styles.infoTitle}>Favorite country traveled</Text>
+            <EditButton></EditButton>
+          </View>
+          <Text style={styles.infoText}>Country</Text>
+        </View>
+        <View style={styles.greyhorizontalBarrier}></View>
+
+        {/********* Local Expertise *********/}
+
+        <View style={[styles.infoTexts, {marginTop: "8%"}]}>
+          <View style={[styles.textContainer]}>
+            <Text style={[styles.title, {flex: .9}]}>Local Expertise</Text>
+            <MoreInfoButton onPress={undefined}></MoreInfoButton>
+            <EditButton></EditButton>
+          </View>
+          <View style={styles.map}></View>
+          <Text style={styles.infoText}>Activity</Text>
+          <Text style={styles.infoText}>Describe your activity here.</Text>
+        </View>
+        <View style={[styles.horizontalBarrier, {marginTop: "25%"}]}></View>
         <StatusBar style="auto" />
 
         {/* Sample Button */}
@@ -186,7 +297,7 @@ const styles = StyleSheet.create({
     //justifyContent: "center",
   },
   header: {
-    flex: 2,
+    flex: 1,
     width: "100%",
     height: "34%",
   },
@@ -195,11 +306,11 @@ const styles = StyleSheet.create({
     top: "-35%",
   },
   textName: {
-    left: "45%",
-    top: "-85%",
+    left: "50%",
+    top: "-82%",
     fontFamily: "Inter_700Bold",
     fontWeight: "700",
-    fontSize: 24,
+    fontSize: 28,
     lineHeight: 29,
     display: "flex",
     alignItems: "center",
@@ -207,11 +318,27 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
   },
   textAge: {
-    left: "45%",
-    top: "-85%",
+    left: "50%",
+    top: "-80%",
+    fontFamily: "Inter_400Regular",
+    fontWeight: "600",
+    fontSize: 24,
+    lineHeight: 29,
+    display: "flex",
+    alignItems: "center",
+    letterSpacing: 0.055,
+    color: "white",
+  },
+  editIcon: {
+    left: "50%",
+    marginTop: "-55%",
+  },
+  cityName: {
+    left: "57%",
+    top: "-78%",
     fontFamily: "Inter_600SemiBold",
     fontWeight: "600",
-    fontSize: 20,
+    fontSize: 14,
     lineHeight: 29,
     display: "flex",
     alignItems: "center",
@@ -226,8 +353,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "row",
     flexWrap: "wrap",
-    marginTop: "12%",
-    marginBottom: "-5%",
+    marginTop: "-8%",
+    marginBottom: "-12%",
   },
   leftItem: {
     height: 90,
@@ -351,6 +478,8 @@ const styles = StyleSheet.create({
   },
   horizontalBarrier: {
     height: 5,
+    marginTop: "7%",
+    marginBottom: "7%",
     marginLeft: "7%",
     marginRight: "7%",
     flex: 1,
@@ -358,9 +487,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   imageTexts: {
-    marginTop: "5%",
+    //marginTop: "5%",
     marginLeft: "7%",
     marginRight: "7%",
+    //marginBottom: "4%",
     //height: 100,
     flex: 1,
     flexDirection: "column",
@@ -374,24 +504,29 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
+    justifyContent: "flex-start",
+    alignContent: "flex-start"
     //backgroundColor: "green",
   },
   title: {
     marginBottom: "2%",
-    flex: 1,
-    flexWrap: "wrap",
+    flex: 3,
+    //flexWrap: "wrap",
     fontWeight: "700",
     fontFamily: "Inter_700Bold",
     fontSize: 20,
     //backgroundColor: "red",
-    lineHeight: 34,
+    //lineHeight: 32,
     letterSpacing: 0.055,
     color: "white",
+    justifyContent: "flex-start",
+    alignContent: "flex-start",
   },
   subheadingContainer: {
     flex: 1,
     flexDirection: "row",
-    flexWrap: "wrap",
+    paddingBottom: "7%",
+    //flexWrap: "wrap",
     //backgroundColor: "green",
   },
   subheading: {
@@ -402,25 +537,25 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     fontFamily: "Inter_500Medium",
     fontSize: 20,
-    lineHeight: 24,
+    //lineHeight: 33,
     //display: "flex",
     alignItems: "center",
     letterSpacing: 0.055,
-    marginBottom: "5%",
+    //marginBottom: "5%",
     //backgroundColor: "blue",
   },
   galleryImages: {
     height: "100%",
     width: "86%",
     marginTop: "2%",
-    //marginBottom: "10%",
+    marginBottom: "-7%",
     marginLeft: "7%",
     marginRight: "7%",
     //paddingRight: 10,
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     //backgroundColor: 'red',
   },
   placeholderImage: {
@@ -434,6 +569,7 @@ const styles = StyleSheet.create({
     fontFamily: "Inter_200ExtraLight",
     fontSize: 24,
     margin: "7%",
+    marginBottom: "-1%",
     borderWidth: 1,
     padding: 10,
     backgroundColor: "#575658",
@@ -442,4 +578,135 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "#575658",
   },
+  infoContainer: {
+    flex: 2,
+    justifyContent: "center",
+    flexDirection: "column",
+    //flexWrap: 'wrap',
+    marginTop: "12%",
+    marginBottom: "-4%",
+  },
+  infoTexts: {
+    //marginTop: "5%",
+    marginLeft: "7%",
+    marginRight: "7%",
+    //marginBottom: "4%",
+    //height: 100,
+    flex: 1,
+    flexDirection: "column",
+    flexWrap: "wrap",
+    //backgroundColor: "orange",
+  },
+  infoTitle: {
+    flex: 1,
+    //flexWrap: "wrap",
+    fontWeight: "700",
+    fontFamily: "Inter_600SemiBold",
+    fontSize: 14,
+    //backgroundColor: "red",
+    //lineHeight: 32,
+    letterSpacing: 0.055,
+    color: "white",
+    paddingTop: "1%",
+  },
+  infoText: {
+    flex: 1,
+    flexWrap: "wrap",
+    color: "white",
+    textAlign: "left",
+    fontWeight: "500",
+    fontFamily: "Inter_500Medium",
+    fontSize: 20,
+    //lineHeight: 33,
+    //display: "flex",
+    alignItems: "center",
+    letterSpacing: 0.055,
+    paddingTop: "3%",
+    //marginBottom: "5%",
+    //backgroundColor: "blue",
+  },
+  greyhorizontalBarrier: {
+    height: 5,
+    marginTop: "4%",
+    marginBottom: "2%",
+    marginLeft: "7%",
+    marginRight: "7%",
+    flex: 1,
+    backgroundColor: "#575658",
+    borderRadius: 20,
+  },
+  hobbies: {
+    marginTop: "10%",
+    marginLeft: "7%",
+    width: 160,
+    height: 50,
+    //backgroundColor: "#E0E0E0",
+    borderRadius: 50 / 2,
+    //alignContent: "center",
+    //textAlign: "center",
+    justifyContent: "center"
+  },
+  hobbyText: {
+    marginLeft: 180 / 3,
+    fontWeight: "500",
+    fontFamily: "Inter_500Medium",
+    fontSize: 14,
+    lineHeight: 17  ,
+    display: "flex",
+    alignItems: "center",
+    letterSpacing: 0.055,
+    color: "#FFFFFF",
+  },
+  hobbyArea: {
+    height: 150,
+  },
+  map: {
+    marginTop: 2,
+    width: "100%",
+    height: 150,
+    backgroundColor: "#575658",
+    borderRadius: 50 / 4,
+  },
+  cameraCircle: {
+    //marginTop: 2,
+    left: "25%",
+    top: "-20%",
+    width: 34,
+    height: 34,
+    backgroundColor: "#D9D9D9",
+    borderRadius: 50 / 2,
+    borderColor: "#000",
+    borderWidth: 1,
+    //alignSelf: "center"
+    //alignContent: "flex-start",
+    //justifyContent: "space-between",
+  },
+  camera: {
+    marginLeft: 19/3,
+    marginTop: 19/3,
+    height: 20,
+    width: 20,
+  },
+  cameraCircle2: {
+    //marginTop: 2,
+    left: "87%",
+    top: "-12%",
+    width: 34,
+    height: 34,
+    backgroundColor: "#D9D9D9",
+    borderRadius: 50 / 2,
+    borderColor: "#000",
+    borderWidth: 1,
+    //alignSelf: "center"
+    //alignContent: "flex-start",
+    //justifyContent: "space-between",
+  },
+  camera2: {
+    //left: "88.5%",
+    //top: "-5.5%",
+    marginLeft: 11/2,
+    marginTop: 5,
+    height: 20,
+    width: 20,
+  }
 });
