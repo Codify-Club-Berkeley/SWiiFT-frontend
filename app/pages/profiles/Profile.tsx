@@ -279,9 +279,33 @@ export default function Profile({navigation}:{navigation:any}) {
 
         {/* Sample Button */}
         <Button
-          title="sample nav"
+          title="Account Settings"
+          onPress={() => {
+            navigation.navigate("AccountSettings");
+          }}
+        ></Button>
+        <Button
+          title="Contact"
+          onPress={() => {
+            navigation.navigate("Contact");
+          }}
+        ></Button>
+        <Button
+          title="FAQ"
           onPress={() => {
             navigation.navigate("FAQ");
+          }}
+        ></Button>
+        <Button
+          title="Privacy"
+          onPress={() => {
+            navigation.navigate("Privacy");
+          }}
+        ></Button>
+        <Button
+          title="Terms of Service"
+          onPress={() => {
+            navigation.navigate("tos");
           }}
         ></Button>
       </View>
