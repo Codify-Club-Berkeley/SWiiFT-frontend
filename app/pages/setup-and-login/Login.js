@@ -7,6 +7,10 @@ export default function Login({navigation}) {
   const onForgotLinkPressNav = () => {
     navigation.navigate('MainPage')
   }
+  const onLoginPressNav = () => {
+    navigation.navigate('Begin')
+  }
+
 
 
   return (
@@ -30,7 +34,7 @@ export default function Login({navigation}) {
           autoCapitalize="none"
         />
         <Text onPress={onForgotLinkPressNav} style={styles.forgot}>Forgot password?</Text>
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity onPress={onLoginPressNav} style={styles.loginButton}>
           <Text style={styles.loginText}>LOG IN</Text> 
         </TouchableOpacity>
         <View style={styles.footerView}>
@@ -46,7 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
-    width: 400,
+    width: "100%",
   },
   container: {
     flex: 1,
@@ -58,7 +62,6 @@ const styles = StyleSheet.create({
     color: "white",
     alignSelf: "flex-end",
     marginRight: 20,
-
   },
   image: {
     marginTop: 140,

@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
-    width: 400,
+    width: "100%",
   },
   container: {
     flex: 1,
