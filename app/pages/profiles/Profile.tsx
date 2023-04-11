@@ -291,7 +291,7 @@ export default function Profile({navigation}:{navigation:any}) {
         <Button
           title="Terms of Service"
           onPress={() => {
-            navigation.navigate("tos");
+            navigation.navigate("TOS");
           }}
         ></Button>
       </View>
