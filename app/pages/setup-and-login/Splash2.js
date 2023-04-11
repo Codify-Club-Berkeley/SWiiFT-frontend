@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     paddingHorizontal: 20,
     color: "white",
-    fontSize: 40,
+    fontSize: 48,
     fontWeight: "bold",
     marginTop: "80%",
   },

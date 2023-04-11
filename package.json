@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-native-dropdown-select-list": "^2.0.4",
+    "react-native-select-dropdown": "^3.3.2"
+  }
+}

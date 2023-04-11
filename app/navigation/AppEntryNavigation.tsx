@@ -1,5 +1,4 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Entry = createNativeStackNavigator();
@@ -9,7 +8,7 @@ import Login from "../pages/setup-and-login/Login";
 import SignUp from "../pages/setup-and-login/SignUp";
 import Splash2 from "../pages/setup-and-login/Splash2";
 import Begin from "../pages/setup-and-login/Begin";
-
+import Start from "../pages/setup-and-login/Start";
 
 
 export default function AppEntryNavigator() {
@@ -22,6 +21,8 @@ export default function AppEntryNavigator() {
       <Entry.Screen name="Login" component={Login}></Entry.Screen>
       <Entry.Screen name="SignUp" component={SignUp}></Entry.Screen>
       <Entry.Screen name="Begin" component={Begin}></Entry.Screen>
+      <Entry.Screen name="Start" component={Start}></Entry.Screen>
+
 
     </Entry.Navigator>
   );
