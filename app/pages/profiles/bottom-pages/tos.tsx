@@ -164,7 +164,7 @@ export default function TOS() {
           <Text style={[styles.sectionTitle, {paddingBottom: '4%'}]}>10. Indemnity by You</Text>
           <Text style={[styles.mainText, {paddingBottom: '2%'}]}>You agree, to the extent permitted under applicable law, to indemnify, defend and hold harmless SWiiFT, our affiliates, and our respective officers, directors, agents, and employees from and against any and all complaints, demands, claims, damages, losses, costs, liabilities and expenses, 
           including attorney’s fees, due to, arising out of, or relating in any way to your access to or use of the Service, your Content, or your breach of this Agreement.</Text>
-          <Text style={[styles.mainText, {paddingBottom: '15%'}]}></Text>
+          <Text style={[styles.mainText, ]}></Text>
 
           <Text style={[styles.sectionTitle, {paddingBottom: '4%'}]}>11. Miscellaneous</Text>
           <Bullet text="This Agreement which includes the Privacy Policy contains the entire agreement between you and SWiiFT regarding your relationship with SWiiFT and the use of the Service, save for anyone who opted out of the retroactive application of the Dispute Section who is still subject to and bound by any prior agreements 
