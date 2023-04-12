@@ -1,6 +1,13 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 export default function MainPage({ navigation }) {
+  const onLoginPress = () => {
+    navigation.navigate("Login");
+  };
+  const onSignUpPress = () => {
+    navigation.navigate("SignUp");
+  };
+
   return (
     <View style={styles.container}>
       <Image
@@ -12,13 +19,13 @@ export default function MainPage({ navigation }) {
       <Text style={styles.subtext}>Experience with locals.</Text>
       <TouchableOpacity
         style={styles.loginButton}
-        onPress={() => navigation.navigate("Login")}
+        onPress={() => onLoginPress()}
       >
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.signUpButton}
-        onPress={() => navigation.navigate("SignUp")}
+        onPress={() => onSignUpPress()}
       >
         <Text style={styles.signUpText}>SIGN UP</Text>
       </TouchableOpacity>

@@ -9,7 +9,6 @@ import {
   Button,
   Touchable,
   TouchableOpacity,
-  Pressable,
   ImageBackground,
 } from "react-native";
 import {
@@ -24,6 +23,7 @@ import EditButton from "../../components/buttons/EditButton";
 import texts from "../../styles/TextStyles";
 import colors from "../../styles/ColorStyles";
 import MoreInfoButton from "../../components/buttons/MoreInfoButton";
+import RectangleTextEntry from "../../components/entry-fields/RectangleTextEntry";
 
 import LinearGradient from "react-native-linear-gradient"
 
@@ -33,33 +33,38 @@ export default function Profile({navigation}:{navigation:any}) {
       <View style={styles.container}>
 
         {/********* Header Section *********/}
-
         <ImageBackground source={require("../../assets/cover-pic.png")} style={styles.backgroundImage}>
-          <View style={[styles.header, {paddingBottom: 0}]}>
+          <View style={styles.header}>
             <View style={styles.leftHeader}>
               <Image source={require("../../assets/ProfileEMPTY.png")} style={styles.profileImg}></Image>
             </View>
             <View style={styles.rightHeader}>
+              <Text style={styles.textAge}>XX Gender</Text>
               <Text style={styles.textName}>First</Text>
             </View>
           </View>
         </ImageBackground>
         <View style={styles.header}>
           <View style={styles.leftHeader}></View>
-          <View style={[styles.rightHeader, {flexDirection: "row"}]}>
-            <Text style={styles.textAge}>XX Gender</Text>
-            <View style={{flexDirection: "row", alignItems: "center", paddingTop: 10}}>
-              <TouchableOpacity>
-                <Image
-                  source={require("../../assets/images/editicon.png")}
-                  style = {styles.editIcon}
-                />
-              </TouchableOpacity>
-              <Text style={styles.cityName}>City Name</Text>
-            </View>
+          <View style={styles.rightHeader}>
+            <TouchableOpacity>
+              <Image
+                source={require("../../assets/images/chat.png")}
+                style = {styles.editIcon}
+              />
+            </TouchableOpacity>
+            <Text style={styles.cityName}>City Name</Text>
           </View>
         </View>
-
+        <View style={styles.compatibilityContainer}>
+          <View style={styles.compatibilityLeft}>
+            <Text style={[texts.header, {letterSpacing: 0.5}]}>Your Compatibility!</Text>
+          </View>
+          <View style={styles.compatibilityRight}>
+            <MoreInfoButton onPress={undefined}></MoreInfoButton>
+          </View>
+        </View>
+        <View style={[styles.compatibilityBar, colors.ovalButtonPurple]}></View>
         {/********* Profile Data *********/}
 
         <View style={styles.profileData}>
@@ -99,26 +104,10 @@ export default function Profile({navigation}:{navigation:any}) {
           <View style={styles.horizontalBarrier}></View>
           <View style={styles.imageTexts}>
             <View style={styles.textContainer}>
-              <Text style={styles.title}>Image Gallery</Text>
-              <EditButton></EditButton>
-            </View>
-            <View style={styles.subheadingContainer}>
-              <Text style={styles.subheading}>Show your best travel pics!</Text>
+              <Text style={[styles.title, {paddingBottom: 10}]}>Image Gallery</Text>
             </View>
           </View>
           <View style={styles.galleryImages}>
-            <Image
-              source={require("../../assets/placeholder.png")}
-              style={styles.placeholderImage}
-            />
-            <Image
-              source={require("../../assets/placeholder.png")}
-              style={styles.placeholderImage}
-            />
-            <Image
-              source={require("../../assets/placeholder.png")}
-              style={styles.placeholderImage}
-            />
             <Image
               source={require("../../assets/placeholder.png")}
               style={styles.placeholderImage}
@@ -136,63 +125,56 @@ export default function Profile({navigation}:{navigation:any}) {
 
         {/********* About Me Section *********/}
 
-        <View style={styles.galleryContainer}>
+        <View style={[styles.galleryContainer, {paddingBottom: 30}]}>
           <View style={styles.horizontalBarrier}></View>
           <View style={styles.imageTexts}>
             <View style={styles.textContainer}>
               <Text style={styles.title}>About Me</Text>
-              <EditButton></EditButton>
             </View>
             <View style={styles.subheadingContainer}>
               <Text style={styles.subheading}>
-                What would you like to do with people you meet?
+                No information to show
               </Text>
             </View>
           </View>
         </View>
-
-        <TextInput
-          style={styles.aboutmeBox}
-          multiline
-          placeholder="e.g. grab drinks / share a meal / go out tonight / play sports / explore the city / visit a museum..."
-          placeholderTextColor="#FFF"
-        ></TextInput>
+        <View style={styles.greyhorizontalBarrier}></View>
 
         {/********* Info Section *********/}
 
         <View style={styles.infoContainer}>
           <View style={styles.infoTexts}>
             <View style={styles.textContainer}>
-              <Text style={styles.infoTitle}>Country of origin</Text>
+              <Text style={styles.infoTitle}>Home Location</Text>
             </View>
-            <Text style={styles.infoText}>City</Text>
-            <Text style={styles.infoText}>State</Text>
-            <Text style={styles.infoText}>Country</Text>
+            <Text style={styles.infoText}>No city to show</Text>
+            <Text style={styles.infoText}>No state to show</Text>
+            <Text style={styles.infoText}>No country to show</Text>
           </View>
           <View style={styles.greyhorizontalBarrier}></View>
           <View style={styles.infoTexts}>
             <View style={styles.textContainer}>
               <Text style={styles.infoTitle}>Education</Text>
             </View>
-            <Text style={styles.infoText}>University</Text>
-            <Text style={styles.infoText}>Major</Text>
-            <Text style={styles.infoText}>XXXX Degree</Text>
+            <Text style={styles.infoText}>No university to show</Text>
+            <Text style={styles.infoText}>No major to show</Text>
+            <Text style={styles.infoText}>No graduation year to show</Text>
           </View>
           <View style={styles.greyhorizontalBarrier}></View>
           <View style={styles.infoTexts}>
             <View style={styles.textContainer}>
               <Text style={styles.infoTitle}>Work</Text>
             </View>
-            <Text style={styles.infoText}>Job Title</Text>
-            <Text style={styles.infoText}>Industry</Text>
+            <Text style={styles.infoText}>No job title to show</Text>
+            <Text style={styles.infoText}>No industry to show</Text>
           </View>
           <View style={styles.greyhorizontalBarrier}></View>
           <View style={styles.infoTexts}>
             <View style={styles.textContainer}>
               <Text style={styles.infoTitle}>Language</Text>
             </View>
-            <Text style={styles.infoText}>Primary Language</Text>
-            <Text style={styles.infoText}>languages</Text>
+            <Text style={styles.infoText}>No primary language to show</Text>
+            <Text style={styles.infoText}>No other language to show</Text>
           </View>
           <View style={styles.horizontalBarrier}></View>
         </View>
@@ -203,12 +185,6 @@ export default function Profile({navigation}:{navigation:any}) {
           <View style={styles.imageTexts}>
             <View style={styles.textContainer}>
               <Text style={styles.title}>Hobbies & Organizations</Text>
-              <EditButton></EditButton>
-            </View>
-            <View style={styles.subheadingContainer}>
-              <Text style={styles.subheading}>
-                Tell us what you love to do!
-              </Text>
             </View>
           </View>
         </View>
@@ -225,27 +201,20 @@ export default function Profile({navigation}:{navigation:any}) {
             <View style={styles.textContainer}>
               <Text style={styles.title}>Travel</Text>
             </View>
-            <View style={styles.subheadingContainer}>
-              <Text style={styles.subheading}>
-                A few country-specifics.
-              </Text>
-            </View>
           </View>
         </View>
         <View style={[styles.infoTexts, {marginTop: "5%"}]}>
           <View style={styles.textContainer}>
             <Text style={styles.infoTitle}>Country count</Text>
-            <EditButton></EditButton>
           </View>
-          <Text style={styles.infoText}>Country count</Text>
+          <Text style={styles.infoText}>No country count to show</Text>
         </View>
         <View style={styles.greyhorizontalBarrier}></View>
         <View style={[styles.infoTexts]}>
           <View style={styles.textContainer}>
             <Text style={styles.infoTitle}>Favorite country traveled</Text>
-            <EditButton></EditButton>
           </View>
-          <Text style={styles.infoText}>Country</Text>
+          <Text style={styles.infoText}>No country to show</Text>
         </View>
         <View style={styles.greyhorizontalBarrier}></View>
 
@@ -253,85 +222,46 @@ export default function Profile({navigation}:{navigation:any}) {
 
         <View style={[styles.infoTexts, {marginTop: "8%"}]}>
           <View style={[styles.textContainer]}>
-            <Text style={[styles.title, {flex: .9}]}>Local Expertise</Text>
+            <Text style={[styles.title, {flex: 1}]}>Local Expertise</Text>
             <MoreInfoButton onPress={undefined}></MoreInfoButton>
-            <EditButton></EditButton>
           </View>
           <View style={styles.map}></View>
           <Text style={styles.infoText}>Activity</Text>
-          <Text style={styles.infoText}>Describe your activity here.</Text>
+          <Text style={styles.infoText}>No activity to show</Text>
         </View>
-        <View style={[styles.horizontalBarrier, {marginTop: "25%"}]}></View>
+        
+        {/********* Report Buttons *********/}
+        <View style={[styles.greyhorizontalBarrier, {marginTop: 100}]}></View>
+
+        <View style={[styles.footer]}>
+          <View style={styles.leftFooter}>
+            <TouchableOpacity onPress={undefined}>
+              <View style={[styles.flagButton]}>
+                <Image source={require("../../assets/images/flag.png")}></Image>
+                <Text style={styles.reportText}>Flag</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.rightFooter}>
+            <TouchableOpacity onPress={undefined}>
+              <View style={[styles.flagButton]}>
+                <Image source={require("../../assets/images/block.png")}></Image>
+                <Text style={styles.reportText}>Block</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+        
+        <View style={[styles.greyhorizontalBarrier, {marginTop: 10}]}></View>
         <StatusBar style="auto" />
 
         {/* Sample Button */}
-        <View style={[styles.bottomButtonsContainer, {marginLeft: "7%"}, {marginRight: "7%"}]}>
-          <Text style={[styles.title, {paddingBottom:"7%"}, {marginLeft: "2%"}]}>Account</Text>
-          <Pressable 
-            onPress={() => {
-              navigation.navigate("AccountSettings");
-            }}
-            style={[styles.button]}>
-
-              <View style={{flexDirection: 'row'}}>
-                <Text style={[styles.title, {flex: 35}, {marginLeft: "2%"}, {marginRight: "2%"}]}>Account Settings</Text>
-                <Text style={[styles.arrowText, {flex: 1}, {marginLeft: "2%"}, {marginRight: "2%"}]}>❯</Text>
-              </View>
-          </Pressable>
-          <View style={styles.greyhorizontalBarrierNoMargins}></View>
-
-          <Pressable 
-            onPress={() => {
-              navigation.navigate("Contact");
-            }}
-            style={[styles.button]}>
-              
-              <View style={{flexDirection: 'row'}}>
-                <Text style={[styles.title, {flex: 35}, {marginLeft: "2%"}, {marginRight: "2%"}]}>Contact</Text>
-                <Text style={[styles.arrowText, {flex: 1}, {marginLeft: "2%"}, {marginRight: "2%"}]}>❯</Text>
-              </View>
-          </Pressable>
-          <View style={styles.greyhorizontalBarrierNoMargins}></View>
-
-          <Pressable 
-            onPress={() => {
-              navigation.navigate("FAQ");
-            }}
-            style={[styles.button]}>
-              
-              <View style={{flexDirection: 'row'}}>
-                <Text style={[styles.title, {flex: 35}, {marginLeft: "2%"}, {marginRight: "2%"}]}>FAQs</Text>
-                <Text style={[styles.arrowText, {flex: 1}, {marginLeft: "2%"}, {marginRight: "2%"}]}>❯</Text>
-              </View>
-          </Pressable>
-          <View style={styles.greyhorizontalBarrierNoMargins}></View>
-
-          <Pressable 
-            onPress={() => {
-              navigation.navigate("Privacy");
-            }}
-            style={[styles.button]}>
-              
-              <View style={{flexDirection: 'row'}}>
-                <Text style={[styles.title, {flex: 35}, {marginLeft: "2%"}, {marginRight: "2%"}]}>Privacy</Text>
-                <Text style={[styles.arrowText, {flex: 1}, {marginLeft: "2%"}, {marginRight: "2%"}]}>❯</Text>
-              </View>
-          </Pressable>
-          <View style={styles.greyhorizontalBarrierNoMargins}></View>
-
-          <Pressable 
-            onPress={() => {
-              navigation.navigate("TOS");
-            }}
-            style={[styles.button]}>
-              
-              <View style={{flexDirection: 'row'}}>
-                <Text style={[styles.title, {flex: 35}, {marginLeft: "2%"}, {marginRight: "2%"}]}>Terms of Service</Text>
-                <Text style={[styles.arrowText, {flex: 1}, {marginLeft: "2%"}, {marginRight: "2%"}]}>❯</Text>
-              </View>
-          </Pressable>
-          <View style={styles.greyhorizontalBarrierNoMargins}></View>
-        </View>
+        <Button
+          title="sample nav"
+          onPress={() => {
+            navigation.navigate("FAQ");
+          }}
+        ></Button>
       </View>
     </ScrollView>
   );
@@ -340,6 +270,7 @@ export default function Profile({navigation}:{navigation:any}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: "column",
     //backgroundColor: "#2D2C2E",
     //alignItems: "center",
     //justifyContent: "center",
@@ -347,7 +278,6 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     flexDirection: "row",
-    paddingBottom: 25,
     //width: "100%",
     //height: "%",
   },
@@ -358,7 +288,7 @@ const styles = StyleSheet.create({
     //height: 230,
   },
   profileImg: {
-    top: 70,
+    top: 50,
     marginTop: 80,
     marginLeft: 30,
     height: 150,
@@ -374,7 +304,6 @@ const styles = StyleSheet.create({
     flexDirection: "column-reverse",
     flexWrap: "wrap",
     justifyContent: "flex-start",
-    //alignItems: "center",
     //backgroundColor: "green",
   },
   textName: {
@@ -406,15 +335,14 @@ const styles = StyleSheet.create({
     color: "white",
   },
   editIcon: {
-    //paddingBottom: 15,
+    //left: "50%",
+    //marginTop: "-40%",
   },
   cityName: {
     //left: "50%",
     //top: "-74%",
-    //justifyContent: "center",
-    //paddingTop: 5,
-    //paddingBottom: 15,
-    paddingLeft: 10,
+    paddingTop: 5,
+    paddingBottom: 15,
     fontFamily: "Inter_600SemiBold",
     fontWeight: "600",
     fontSize: 14,
@@ -424,6 +352,35 @@ const styles = StyleSheet.create({
     letterSpacing: 0.055,
     color: "white",
   },
+  compatibilityContainer: {
+    paddingTop: 25,
+    paddingBottom: 10,
+    marginLeft: "12%",
+    marginRight: "12%",
+    flexDirection: "row",
+    //backgroundColor: "blue",
+    //justifyContent: "center",
+    alignItems: "center",
+  },
+  compatibilityLeft: {
+    flex: 1,
+    alignItems: "flex-end"
+  },
+  compatibilityRight: {
+    alignItems: "flex-end",
+    flex: .3,
+    //backgroundColor: "red",
+  },
+  compatibilityBar: {
+    marginLeft: "12%",
+    marginRight: "12%",
+    marginBottom: 15,
+    //width: "100%",
+    height: 20,
+    borderColor: "white",
+    borderWidth: 2,
+    borderRadius: 50 / 4,
+  },
   scrollView: {
     backgroundColor: "#2D2C2E",
   },
@@ -432,7 +389,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "row",
     flexWrap: "wrap",
-    marginTop: "-8%",
+    //marginTop: "28%",
     marginBottom: "-12%",
   },
   leftItem: {
@@ -643,26 +600,16 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   aboutmeBox: {
-    flexWrap: "wrap",
-    height: 180,
-    fontFamily: "Inter_200ExtraLight",
-    fontSize: 24,
     margin: "7%",
     marginBottom: "-1%",
-    borderWidth: 1,
     padding: 10,
-    backgroundColor: "#575658",
-    color: "#FFF",
-    //opacity: .55,
-    borderRadius: 10,
-    borderColor: "#575658",
   },
   infoContainer: {
     flex: 2,
     justifyContent: "center",
     flexDirection: "column",
     //flexWrap: 'wrap',
-    marginTop: "12%",
+    marginTop: "2%",
     marginBottom: "-4%",
   },
   infoTexts: {
@@ -714,15 +661,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#575658",
     borderRadius: 20,
   },
-
-  greyhorizontalBarrierNoMargins: {
-    height: 5,
-    marginTop: "1%",
-    marginBottom: "7%",
-    flex: 1,
-    backgroundColor: "#575658",
-    borderRadius: 20,
-  },
   hobbies: {
     marginTop: "10%",
     marginLeft: "7%",
@@ -755,74 +693,51 @@ const styles = StyleSheet.create({
     backgroundColor: "#575658",
     borderRadius: 50 / 4,
   },
-  cameraCircle: {
-    //marginTop: 2,
-    left: "25%",
-    top: "-20%",
-    width: 34,
-    height: 34,
-    backgroundColor: "#D9D9D9",
+  footer: {
+    flex: 1,
+    flexDirection: "row",
+    marginLeft: "7%",
+    marginRight: "7%",
+    //width: "100%",
+    //height: "%",
+  },
+  leftFooter: {
+    flex: 1,
+    flexDirection: "column",
+    //backgroundColor: "red",
+    alignItems: "center",
+  },
+  rightFooter: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    //backgroundColor: "green",
+  },
+  flagButton: {
+    flexDirection: "row",
+    marginTop: 30,
+    marginBottom: 30,
+    //marginTop: "10%",
+    //marginLeft: "7%",
+    width: 160,
+    height: 50,
+    backgroundColor: "rgba(155, 110, 183, 0.5)",
     borderRadius: 50 / 2,
-    borderColor: "#000",
-    borderWidth: 1,
-    //alignSelf: "center"
-    //alignContent: "flex-start",
-    //justifyContent: "space-between",
+    borderWidth: 3,
+    borderColor: "white",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  camera: {
-    marginLeft: 19/3,
-    marginTop: 19/3,
-    height: 20,
-    width: 20,
-  },
-  cameraCircle2: {
-    //marginTop: 2,
-    left: "87%",
-    top: "-12%",
-    width: 34,
-    height: 34,
-    backgroundColor: "#D9D9D9",
-    borderRadius: 50 / 2,
-    borderColor: "#000",
-    borderWidth: 1,
-    //alignSelf: "center"
-    //alignContent: "flex-start",
-    //justifyContent: "space-between",
-  },
-  camera2: {
-    //left: "88.5%",
-    //top: "-5.5%",
-    marginLeft: 11/2,
-    marginTop: 5,
-    height: 20,
-    width: 20,
-  },
-
-  buttonText: {
-    fontFamily: "Inter_400Regular",
-    fontWeight: "400",
-    fontSize: 24,
-    lineHeight: 29,
+  reportText: {
+    paddingLeft: 10,
+    textAlign: "center",
+    fontWeight: "500",
+    fontFamily: "Inter_500Medium",
+    fontSize: 22,
     display: "flex",
     alignItems: "center",
     letterSpacing: 0.055,
-    color: "#BC7BBC",
-  },
-
-  button: {
-
-  },
-
-  bottomButtonsContainer: {
-
-  },
-
-  arrowText: {
-    fontSize: 20,
-    fontWeight: "500",
-    fontFamily: "Inter_500Medium",
-    color: "grey",
-    textAlign: "right",
-    letterSpacing: .055,
-  },
+    textTransform: "uppercase",
+    color: "#FFFFFF",
+  }
 });
