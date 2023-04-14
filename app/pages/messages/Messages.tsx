@@ -7,17 +7,17 @@ import SingleMessage from "./messageComponents/SingleMessage";
 // Example of Message Data Array
 const messageData = [
   { avatar: "https://www2.eecs.berkeley.edu/Faculty/Photos/Homepages/denero.jpg", username: "John Denero", 
-  displayMessage: "What's up william", timestamp: "11:30 AM"},
+  displayMessage: "What's up!", timestamp: "11:30 AM"},
   { avatar: "https://www2.eecs.berkeley.edu/Faculty/Photos/Homepages/rao.jpg", username: "Satish Rao", 
-  displayMessage: "What's up william part 2", timestamp: "10:00 PM"},
+  displayMessage: "What's up! part 2", timestamp: "10:00 PM"},
   { avatar: "https://www2.eecs.berkeley.edu/Faculty/Photos/Homepages/denero.jpg", username: "John Denero", 
-  displayMessage: "What's up william", timestamp: "11:30 AM"},
+  displayMessage: "What's up!", timestamp: "11:30 AM"},
   { avatar: "https://www2.eecs.berkeley.edu/Faculty/Photos/Homepages/rao.jpg", username: "Satish Rao", 
-  displayMessage: "What's up william part 2", timestamp: "10:00 PM"},
+  displayMessage: "What's up! part 2", timestamp: "10:00 PM"},
   { avatar: "https://www2.eecs.berkeley.edu/Faculty/Photos/Homepages/denero.jpg", username: "John Denero", 
-  displayMessage: "What's up william", timestamp: "11:30 AM"},
+  displayMessage: "What's up!", timestamp: "11:30 AM"},
   { avatar: "https://www2.eecs.berkeley.edu/Faculty/Photos/Homepages/rao.jpg", username: "Satish Rao", 
-  displayMessage: "What's up william part 2", timestamp: "10:00 PM"}
+  displayMessage: "What's up! part 2", timestamp: "10:00 PM"}
 ]
 
 // Example of Request Data Array

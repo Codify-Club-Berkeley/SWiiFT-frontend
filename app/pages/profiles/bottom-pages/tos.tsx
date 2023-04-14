@@ -176,34 +176,6 @@ export default function TOS() {
           <Bullet text="No agency, partnership, joint venture, fiduciary or other special relationship or employment is created as a result of this Agreement, 
           and you may not make any representations on behalf of or bind SWiiFT in any manner."></Bullet>
           <Text style={[styles.mainText, {paddingBottom: '15%'}]}></Text>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <Text style={[styles.mainText, {paddingBottom: '15%'}]}></Text>
-
-
         </ScrollView>
       </View>
     </View>
