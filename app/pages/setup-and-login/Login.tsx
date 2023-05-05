@@ -15,16 +15,19 @@ export default function Login({ navigation }) {
   const onForgotLinkPressNav = () => {
     navigation.navigate("MainPage");
   };
+  const onLoginPressNav = () => {
+    navigation.navigate("Begin");
+  };
 
   return (
     <View style={styles.container}>
       <ImageBackground
         style={styles.background}
-        source={require("../../assets/images/login-images/beach.png")}
+        source={require("../../assets/loginBackground.png")}
       >
         <Image
           style={styles.image}
-          source={require("../../assets/images/swiift-small-logo.png")}
+          source={require("../../assets/swiift-small-logo.png")}
           resizeMode="contain"
         />
         <Text style={styles.text}>Welcome back!</Text>
@@ -46,10 +49,7 @@ export default function Login({ navigation }) {
         <Text onPress={onForgotLinkPressNav} style={styles.forgot}>
           Forgot password?
         </Text>
-        <TouchableOpacity
-          style={styles.loginButton}
-          onPress={() => navigation.navigate("Tab")}
-        >
+        <TouchableOpacity onPress={onLoginPressNav} style={styles.loginButton}>
           <Text style={styles.loginText}>LOG IN</Text>
         </TouchableOpacity>
         <View style={styles.footerView}>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
-    width: 400,
+    width: "100%",
   },
   container: {
     flex: 1,

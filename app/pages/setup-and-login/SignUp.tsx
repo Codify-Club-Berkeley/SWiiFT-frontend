@@ -17,11 +17,11 @@ export default function SignUp({ navigation }) {
     <View style={styles.container}>
       <ImageBackground
         style={styles.background}
-        source={require("../../assets/images/login-images/mountain.png")}
+        source={require("../../assets/signupBackground.png")}
       >
         <Image
           style={styles.image}
-          source={require("../../assets/images/swiift-small-logo.png")}
+          source={require("../../assets/swiift-small-logo.png")}
           resizeMode="contain"
         />
         <Text style={styles.text}>Create Account</Text>
@@ -40,10 +40,7 @@ export default function SignUp({ navigation }) {
           underlineColorAndroid="transparent"
           autoCapitalize="none"
         />
-        <TouchableOpacity
-          style={styles.signUpButton}
-          onPress={() => navigation.navigate("Tab")}
-        >
+        <TouchableOpacity style={styles.signUpButton}>
           <Text style={styles.signUpText}>SIGN UP</Text>
         </TouchableOpacity>
         <View style={styles.footerView}>
@@ -64,7 +61,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
-    width: 400,
+    width: "100%",
   },
   container: {
     flex: 1,
