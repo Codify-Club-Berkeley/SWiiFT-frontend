@@ -9,6 +9,8 @@ import {
   Button,
   Touchable,
   TouchableOpacity,
+  Pressable,
+  ImageBackground,
 } from "react-native";
 import {
   Inter_200ExtraLight,
@@ -32,45 +34,30 @@ export default function Profile({navigation}:{navigation:any}) {
 
         {/********* Header Section *********/}
 
-        <View style={styles.header}>
-          <Image
-            source={require("../../assets/cover-pic.png")}
-            style={{
-              height: "70%",
-              width: "100%",
-            
-            }}
-          />
-          <TouchableOpacity style={styles.cameraCircle2}>
-            <Image
-              source={require("../../assets/camera.png")}
-              style={styles.camera2}
-            />
-          </TouchableOpacity>
-          <View style={styles.image}>
-            <Image
-              source={require("../../assets/ProfileEMPTY.png")}
-              style={{
-                height: 150,
-                width: 150,
-              }}
-            />
-            <TouchableOpacity style={styles.cameraCircle}>
-              <Image
-                source={require("../../assets/camera.png")}
-                style={styles.camera}
-              />
-            </TouchableOpacity>
+        <ImageBackground source={require("../../assets/cover-pic.png")} style={styles.backgroundImage}>
+          <View style={[styles.header, {paddingBottom: 0}]}>
+            <View style={styles.leftHeader}>
+              <Image source={require("../../assets/ProfileEMPTY.png")} style={styles.profileImg}></Image>
+            </View>
+            <View style={styles.rightHeader}>
+              <Text style={styles.textName}>First</Text>
+            </View>
           </View>
-          <Text style={styles.textName}>First</Text>
-          <Text style={styles.textAge}>XX Gender</Text>
-          <TouchableOpacity>
-            <Image
-              source={require("../../assets/editicon.png")}
-              style = {styles.editIcon}
-            />
-          </TouchableOpacity>
-          <Text style={styles.cityName}>City Name</Text>
+        </ImageBackground>
+        <View style={styles.header}>
+          <View style={styles.leftHeader}></View>
+          <View style={[styles.rightHeader, {flexDirection: "row"}]}>
+            <Text style={styles.textAge}>XX Gender</Text>
+            <View style={{flexDirection: "row", alignItems: "center", paddingTop: 10}}>
+              <TouchableOpacity>
+                <Image
+                  source={require("../../assets/images/editicon.png")}
+                  style = {styles.editIcon}
+                />
+              </TouchableOpacity>
+              <Text style={styles.cityName}>City Name</Text>
+            </View>
+          </View>
         </View>
 
         {/********* Profile Data *********/}
@@ -278,36 +265,73 @@ export default function Profile({navigation}:{navigation:any}) {
         <StatusBar style="auto" />
 
         {/* Sample Button */}
-        <Button
-          title="Account Settings"
-          onPress={() => {
-            navigation.navigate("AccountSettings");
-          }}
-        ></Button>
-        <Button
-          title="Contact"
-          onPress={() => {
-            navigation.navigate("Contact");
-          }}
-        ></Button>
-        <Button
-          title="FAQ"
-          onPress={() => {
-            navigation.navigate("FAQ");
-          }}
-        ></Button>
-        <Button
-          title="Privacy"
-          onPress={() => {
-            navigation.navigate("Privacy");
-          }}
-        ></Button>
-        <Button
-          title="Terms of Service"
-          onPress={() => {
-            navigation.navigate("tos");
-          }}
-        ></Button>
+        <View style={[styles.bottomButtonsContainer, {marginLeft: "7%"}, {marginRight: "7%"}]}>
+          <Text style={[styles.title, {paddingBottom:"7%"}, {marginLeft: "2%"}]}>Account</Text>
+          <Pressable 
+            onPress={() => {
+              navigation.navigate("AccountSettings");
+            }}
+            style={[styles.button]}>
+
+              <View style={{flexDirection: 'row'}}>
+                <Text style={[styles.title, {flex: 35}, {marginLeft: "2%"}, {marginRight: "2%"}]}>Account Settings</Text>
+                <Text style={[styles.arrowText, {flex: 1}, {marginLeft: "2%"}, {marginRight: "2%"}]}>❯</Text>
+              </View>
+          </Pressable>
+          <View style={styles.greyhorizontalBarrierNoMargins}></View>
+
+          <Pressable 
+            onPress={() => {
+              navigation.navigate("Contact");
+            }}
+            style={[styles.button]}>
+              
+              <View style={{flexDirection: 'row'}}>
+                <Text style={[styles.title, {flex: 35}, {marginLeft: "2%"}, {marginRight: "2%"}]}>Contact</Text>
+                <Text style={[styles.arrowText, {flex: 1}, {marginLeft: "2%"}, {marginRight: "2%"}]}>❯</Text>
+              </View>
+          </Pressable>
+          <View style={styles.greyhorizontalBarrierNoMargins}></View>
+
+          <Pressable 
+            onPress={() => {
+              navigation.navigate("FAQ");
+            }}
+            style={[styles.button]}>
+              
+              <View style={{flexDirection: 'row'}}>
+                <Text style={[styles.title, {flex: 35}, {marginLeft: "2%"}, {marginRight: "2%"}]}>FAQs</Text>
+                <Text style={[styles.arrowText, {flex: 1}, {marginLeft: "2%"}, {marginRight: "2%"}]}>❯</Text>
+              </View>
+          </Pressable>
+          <View style={styles.greyhorizontalBarrierNoMargins}></View>
+
+          <Pressable 
+            onPress={() => {
+              navigation.navigate("Privacy");
+            }}
+            style={[styles.button]}>
+              
+              <View style={{flexDirection: 'row'}}>
+                <Text style={[styles.title, {flex: 35}, {marginLeft: "2%"}, {marginRight: "2%"}]}>Privacy</Text>
+                <Text style={[styles.arrowText, {flex: 1}, {marginLeft: "2%"}, {marginRight: "2%"}]}>❯</Text>
+              </View>
+          </Pressable>
+          <View style={styles.greyhorizontalBarrierNoMargins}></View>
+
+          <Pressable 
+            onPress={() => {
+              navigation.navigate("TOS");
+            }}
+            style={[styles.button]}>
+              
+              <View style={{flexDirection: 'row'}}>
+                <Text style={[styles.title, {flex: 35}, {marginLeft: "2%"}, {marginRight: "2%"}]}>Terms of Service</Text>
+                <Text style={[styles.arrowText, {flex: 1}, {marginLeft: "2%"}, {marginRight: "2%"}]}>❯</Text>
+              </View>
+          </Pressable>
+          <View style={styles.greyhorizontalBarrierNoMargins}></View>
+        </View>
       </View>
     </ScrollView>
   );
@@ -322,44 +346,75 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 1,
-    width: "100%",
-    height: "34%",
+    flexDirection: "row",
+    paddingBottom: 25,
+    //width: "100%",
+    //height: "%",
   },
-  image: {
-    left: "7%",
-    top: "-35%",
+  backgroundImage: {
+    flex: 1,
+    resizeMode: "repeat",
+    //justifyContent: "center",
+    //height: 230,
+  },
+  profileImg: {
+    top: 70,
+    marginTop: 80,
+    marginLeft: 30,
+    height: 150,
+    width: 150,
+  },
+  leftHeader: {
+    flex: 1,
+    flexDirection: "column",
+    //backgroundColor: "red",
+  },
+  rightHeader: {
+    flex: 1,
+    flexDirection: "column-reverse",
+    flexWrap: "wrap",
+    justifyContent: "flex-start",
+    //alignItems: "center",
+    //backgroundColor: "green",
   },
   textName: {
-    left: "50%",
-    top: "-82%",
+    //left: "50%",
+    //marginTop: 160,
+    paddingBottom: 10,
     fontFamily: "Inter_700Bold",
     fontWeight: "700",
     fontSize: 28,
-    lineHeight: 29,
-    display: "flex",
-    alignItems: "center",
-    letterSpacing: 0.055,
+    //lineHeight: 29,
+    //display: "flex",
+    //alignItems: "center",
+    //letterSpacing: 0.055,
     color: "#FFFFFF",
   },
   textAge: {
-    left: "50%",
-    top: "-80%",
+    //left: "50%",
+    //paddingLeft: 30,
+    //marginRight: 20,
+    //marginTop: 160,
     fontFamily: "Inter_400Regular",
     fontWeight: "600",
     fontSize: 24,
-    lineHeight: 29,
-    display: "flex",
-    alignItems: "center",
-    letterSpacing: 0.055,
+    //lineHeight: 29,
+    //display: "flex",
+    //alignItems: "flex-start",
+    //justifyContent: "flex-start",
+    //letterSpacing: 0.055,
     color: "white",
   },
   editIcon: {
-    left: "50%",
-    marginTop: "-55%",
+    //paddingBottom: 15,
   },
   cityName: {
-    left: "57%",
-    top: "-78%",
+    //left: "50%",
+    //top: "-74%",
+    //justifyContent: "center",
+    //paddingTop: 5,
+    //paddingBottom: 15,
+    paddingLeft: 10,
     fontFamily: "Inter_600SemiBold",
     fontWeight: "600",
     fontSize: 14,
@@ -659,6 +714,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#575658",
     borderRadius: 20,
   },
+
+  greyhorizontalBarrierNoMargins: {
+    height: 5,
+    marginTop: "1%",
+    marginBottom: "7%",
+    flex: 1,
+    backgroundColor: "#575658",
+    borderRadius: 20,
+  },
   hobbies: {
     marginTop: "10%",
     marginLeft: "7%",
@@ -732,5 +796,33 @@ const styles = StyleSheet.create({
     marginTop: 5,
     height: 20,
     width: 20,
-  }
+  },
+
+  buttonText: {
+    fontFamily: "Inter_400Regular",
+    fontWeight: "400",
+    fontSize: 24,
+    lineHeight: 29,
+    display: "flex",
+    alignItems: "center",
+    letterSpacing: 0.055,
+    color: "#BC7BBC",
+  },
+
+  button: {
+
+  },
+
+  bottomButtonsContainer: {
+
+  },
+
+  arrowText: {
+    fontSize: 20,
+    fontWeight: "500",
+    fontFamily: "Inter_500Medium",
+    color: "grey",
+    textAlign: "right",
+    letterSpacing: .055,
+  },
 });
