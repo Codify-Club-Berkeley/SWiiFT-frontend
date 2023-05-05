@@ -79,6 +79,14 @@ export default function Start({ navigation }) {
         defaultOption={{ key: "1", value: "Country" }}
         placeholderTextColor="white"
       />
+      <TouchableOpacity
+        style={styles.signUpButton}
+        onPress={() => {
+          navigation.navigate("Tab");
+        }}
+      >
+        <Text style={styles.signUpText}>Done</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -90,6 +98,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "column",
     backgroundColor: "#2D2C2E",
+  },
+  signUpButton: {
+    alignSelf: "center",
+    width: 350,
+    borderRadius: 12,
+    borderWidth: 3,
+    borderColor: "white",
+    height: 60,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#9B6EB7",
+    marginTop: 70,
+  },
+  signUpText: {
+    alignSelf: "center",
+    color: "white",
+    fontSize: 20,
   },
   title: {
     color: "white",

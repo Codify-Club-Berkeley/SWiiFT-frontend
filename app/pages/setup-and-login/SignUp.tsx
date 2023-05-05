@@ -21,7 +21,7 @@ export default function SignUp({ navigation }) {
       >
         <Image
           style={styles.image}
-          source={require("../../assets/swiift-small-logo.png")}
+          source={require("../../assets/images/swiift-small-logo.png")}
           resizeMode="contain"
         />
         <Text style={styles.text}>Create Account</Text>

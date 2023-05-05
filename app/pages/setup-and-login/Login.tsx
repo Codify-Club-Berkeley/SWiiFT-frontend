@@ -27,7 +27,7 @@ export default function Login({ navigation }) {
       >
         <Image
           style={styles.image}
-          source={require("../../assets/swiift-small-logo.png")}
+          source={require("../../assets/images/swiift-small-logo.png")}
           resizeMode="contain"
         />
         <Text style={styles.text}>Welcome back!</Text>
