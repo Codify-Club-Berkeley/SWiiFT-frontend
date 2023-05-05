@@ -36,6 +36,7 @@ export default function App() {
 
   return <RootNavigation></RootNavigation>;
 }
+
 registerRootComponent(App);
 
 const styles = StyleSheet.create({
