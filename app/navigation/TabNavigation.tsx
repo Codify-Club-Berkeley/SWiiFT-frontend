@@ -7,6 +7,8 @@ import LocalsNavigator from "./TabNavigationNavigators/LocalsNavigation";
 import MessagesNavigator from "./TabNavigationNavigators/MessagesNavigation";
 import ProfileOtherNavigator from "./TabNavigationNavigators/ProfileOtherNavigation"
 
+import Test from "../pages/Test";
+
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
@@ -15,7 +17,7 @@ export default function TabNavigation() {
       <Tab.Screen
         name="ProfileNavigator"
         component={ProfileNavigator}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       ></Tab.Screen>
       <Tab.Screen
         name="ProfileOtherNavigator"
@@ -30,6 +32,7 @@ export default function TabNavigation() {
         name="LocalsNavigator"
         component={LocalsNavigator}
       ></Tab.Screen>
+      <Tab.Screen name="Test" component={Test}></Tab.Screen>
     </Tab.Navigator>
   );
 }

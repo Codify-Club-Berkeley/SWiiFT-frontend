@@ -10,17 +10,17 @@ import {
 interface Props {
   onPress: () => void;
   label: string;
-  defaultSize?: boolean;
-  darkGray?: boolean;
+  color: string;
+  wide?: boolean;
   uppercase?: boolean;
   disabled?: boolean;
 }
 
 const { width } = Dimensions.get('window');
 
-const OvalButton = ({ onPress, label, defaultSize=true, darkGray=false, uppercase=true, disabled=false }: Props) => {
-  const backgroundColor = darkGray ? '#2D2C2E' : '#9B6EB7';
-  const size = defaultSize ? styles.defaultSize : { width: width * 0.8 };
+const OvalButton = ({ onPress, label, wide=false, color, uppercase=true, disabled=false }: Props) => {
+  const backgroundColor = color;
+  const size = wide ? { width: width * 0.8 } : styles.defaultSize;
   const textTransform = uppercase ? 'uppercase' : 'none';
 
   return (
